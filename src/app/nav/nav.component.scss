@@ -1,0 +1,72 @@
+@import "~src/styles/global/parallax";
+
+.navbar-cust {
+  overflow: hidden;
+  width: 100vw;
+  height: 9vh;
+
+  opacity: 1;
+
+  -webkit-transition: visibility 0.1s, opacity 0.1s;
+  -moz-transition: visibility 0.1s, opacity 0.1s;
+  -ms-transition: visibility 0.1s, opacity 0.1s;
+  -o-transition: visibility 0.1s, opacity 0.1s;
+  transition: visibility 0.1s, opacity 0.1s;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.nav-light {
+  background-color: rgba(255, 255, 255, 0.51) !important;
+
+  .nav-it {
+    color: #005288 !important;
+    font-weight: 300 !important;
+    height: 100% !important;
+    pointer-events: auto;
+  }
+
+  .nav-it:hover {
+    background-color: #005288 !important;
+    color: white !important;
+    text-decoration: none;
+    pointer-events: auto;
+  }
+}
+
+.nav-dark {
+  background-color: rgba(0, 59, 98, 0.6) !important;
+
+  .nav-it {
+    color: white !important;
+    font-weight: 300 !important;
+    height: 100% !important;
+    pointer-events: auto;
+  }
+
+  .nav-it:hover {
+    background-color: white !important;
+    color: #005288 !important;
+    text-decoration: none;
+    pointer-events: auto;
+  }
+
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  z-index: 10;
+  width: 100vw;
+  pointer-events: none;
+}
+
+.hid {
+  visibility: hidden !important;
+}
+
+.sho {
+  visibility: visible !important;
+}

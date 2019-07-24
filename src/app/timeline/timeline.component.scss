@@ -1,0 +1,41 @@
+.timeline-title {
+  text-align: center;
+  font-weight: 300;
+  font-size: 400%;
+  color: #006da8;
+}
+
+.v-line {
+  width: 4px; /* Line width */
+  background-color: #006da8; /* Line color */
+  margin: auto;
+  height: 100%;
+}
+
+.right-arrow {
+  width: 0;
+  height: 0;
+  border-bottom: 55px solid transparent;  /* left arrow slant */
+  border-top: 55px solid transparent; /* right arrow slant */
+  border-left: 55px solid #77afde; /* bottom, add background color here */
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-100%,-50%);
+  z-index: 100;
+}
+
+.left-arrow {
+  width: 0;
+  height: 0;
+  border-bottom: 55px solid transparent;  /* left arrow slant */
+  border-top: 55px solid transparent; /* right arrow slant */
+  border-right: 55px solid #77afde; /* bottom, add background color here */
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(0%,-50%);
+  z-index: 100;
+}

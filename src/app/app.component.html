@@ -1,12 +1,11 @@
 <div class="wrapper" (scroll)="scrollEmitter.emit(null)"><!-- (scroll)="onScroll($event)"> -->
   <app-hero [scrollEmitter]="scrollEmitter" (heroYPos)="handleUnstick($event)"></app-hero>
-  <app-nav [hide]="sticky" [dark]="false" [sticky]="false" (navYPos)="handleStick($event)" [scrollEmitter]="scrollEmitter"></app-nav>
+  <app-nav [hide]="sticky" [dark]="sticky" [sticky]="false" (navYPos)="handleStick($event)" [scrollEmitter]="scrollEmitter"></app-nav>
   <section class="section static">
-    <div class="container-fluid">
-      <div class="row" style="min-height: 120vh;"></div>
-    </div>
+    <app-timeline></app-timeline>
   </section>
+
 </div>
-<app-nav [hide]="!sticky" [dark]="true" [sticky]="true"></app-nav>
+<app-nav [hide]="!sticky" [dark]="sticky" [sticky]="true"></app-nav>
 
 

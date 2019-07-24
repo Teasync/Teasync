@@ -1,20 +1,35 @@
 @import "~src/styles/global/parallax";
 
+$tr-time: 0.05s;
+
+@mixin transition($str) {
+  -webkit-transition: $str;
+  -moz-transition: $str;
+  -ms-transition: $str;
+  -o-transition: $str;
+  transition: $str;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .navbar-cust {
   overflow: hidden;
   width: 100vw;
   height: 9vh;
 
-  opacity: 1;
-
-  -webkit-transition: visibility 0.1s, opacity 0.1s;
-  -moz-transition: visibility 0.1s, opacity 0.1s;
-  -ms-transition: visibility 0.1s, opacity 0.1s;
-  -o-transition: visibility 0.1s, opacity 0.1s;
-  transition: visibility 0.1s, opacity 0.1s;
-
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+}
+
+.nav-it {
+  font-size: 3vh;
+  font-weight: 300 !important;
+  pointer-events: auto;
+  padding: .9em 10px;
+  margin: auto 0 auto 0;
+  text-decoration: none;
 }
 
 .nav-light {
@@ -22,16 +37,11 @@
 
   .nav-it {
     color: #005288 !important;
-    font-weight: 300 !important;
-    height: 100% !important;
-    pointer-events: auto;
-  }
-
-  .nav-it:hover {
-    background-color: #005288 !important;
-    color: white !important;
-    text-decoration: none;
-    pointer-events: auto;
+    //@include transition(color #{$tr-time} +', background-color #{$tr-time}')
+    &:hover {
+      background-color: rgba(0, 82, 136, 0.76) !important;
+      color: white !important;
+    }
   }
 }
 
@@ -40,18 +50,12 @@
 
   .nav-it {
     color: white !important;
-    font-weight: 300 !important;
-    height: 100% !important;
-    pointer-events: auto;
+    //@include transition(color #{$tr-time} +', background-color #{$tr-time}')
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.75) !important;
+      color: #005288 !important;
+    }
   }
-
-  .nav-it:hover {
-    background-color: white !important;
-    color: #005288 !important;
-    text-decoration: none;
-    pointer-events: auto;
-  }
-
 }
 
 .sticky {

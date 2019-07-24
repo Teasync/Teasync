@@ -13,14 +13,12 @@ export class AppComponent implements OnInit {
   }
 
   handleStick(e): void {
-    console.log('navpos:' + e + ' ' + this.sticky);
     if (!this.sticky && e < 0) {
       this.sticky = true;
     }
   }
 
   handleUnstick(e): void {
-    console.log('heropos:' + e + ' ' + this.sticky);
     if (this.sticky && e >= 0) {
       this.sticky = false;
     }

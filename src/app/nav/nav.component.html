@@ -1,5 +1,5 @@
-<nav [ngClass]="{'sho' : !hide, 'hid' : hide, 'nav-dark': dark, 'nav-light': !dark, 'sticky': sticky}"
-     [ngStyle]="{'opacity': hide ? 0 : 1}"  #nav
+<nav [ngClass]="{'show_' : visible, 'hide_' : !visible, 'nav-dark': !isHeroNav, 'nav-light': isHeroNav, 'sticky': !isHeroNav}"
+     [ngStyle]="{'opacity': visible ? 1 : 0}"  #nav
      class="navbar-cust d-flex justify-content-center flex-row">
   <a href="#" class="nav-it h3" id="navWork"> Timeline </a>
   <a href="#" class="nav-it h3" id="navProjects"> Projects </a>

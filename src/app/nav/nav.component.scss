@@ -1,6 +1,6 @@
 @import "~src/styles/global/parallax";
 
-$tr-time: 0.05s;
+$tr-time: 0.15s;
 
 @mixin transition($str) {
   -webkit-transition: $str;
@@ -17,40 +17,43 @@ $tr-time: 0.05s;
 .navbar-cust {
   overflow: hidden;
   width: 100vw;
-  height: 9vh;
+  height: 80px;
 
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
 
 .nav-it {
-  font-size: 3vh;
+  font-size: 1.7em;
   font-weight: 300 !important;
   pointer-events: auto;
-  padding: .9em 10px;
+  padding: 25px 1.2vw;
   margin: auto 0 auto 0;
   text-decoration: none;
 }
 
 .nav-light {
   background-color: rgba(255, 255, 255, 0.51) !important;
+  @include transition(opacity #{$tr-time});
 
   .nav-it {
     color: #005288 !important;
-    //@include transition(color #{$tr-time} +', background-color #{$tr-time}')
     &:hover {
       background-color: rgba(0, 82, 136, 0.76) !important;
       color: white !important;
     }
   }
+
+  bottom: 0;
+  position: absolute;
 }
 
 .nav-dark {
   background-color: rgba(0, 59, 98, 0.6) !important;
+  @include transition(opacity #{$tr-time});
 
   .nav-it {
     color: white !important;
-    //@include transition(color #{$tr-time} +', background-color #{$tr-time}')
     &:hover {
       background-color: rgba(255, 255, 255, 0.75) !important;
       color: #005288 !important;
@@ -67,10 +70,10 @@ $tr-time: 0.05s;
   pointer-events: none;
 }
 
-.hid {
+.hide_ {
   visibility: hidden !important;
 }
 
-.sho {
+.show_ {
   visibility: visible !important;
 }

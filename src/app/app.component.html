@@ -1,11 +1,10 @@
-<div class="wrapper" (scroll)="scrollEmitter.emit(null)"><!-- (scroll)="onScroll($event)"> -->
-  <app-hero [scrollEmitter]="scrollEmitter" (heroYPos)="handleUnstick($event)"></app-hero>
-  <app-nav [hide]="sticky" [dark]="sticky" [sticky]="false" (navYPos)="handleStick($event)" [scrollEmitter]="scrollEmitter"></app-nav>
+<div class="wrapper" (scroll)="onScroll($event)"><!-- (scroll)="onScroll($event)"> -->
+  <app-hero></app-hero>
   <section class="section static">
     <app-timeline></app-timeline>
   </section>
 
 </div>
-<app-nav [hide]="!sticky" [dark]="sticky" [sticky]="true"></app-nav>
+<app-nav [isHeroNav]="false"></app-nav>
 
 

@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { NavService } from '../nav.service';
 
 @Component({
   selector: 'app-hero',
@@ -7,16 +8,10 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild }
 })
 export class HeroComponent implements OnInit {
   // @ts-ignore
+  // tslint:disable-next-line:variable-name
   @ViewChild('hero_img') hero_img: ElementRef;
-  @Input() scrollEmitter: EventEmitter<void>;
-  @Output() heroYPos = new EventEmitter<number>();
 
-  constructor() { }
+  constructor(private navService: NavService) { }
 
-  ngOnInit() {
-    this.scrollEmitter.subscribe(n => {
-      this.heroYPos.emit(this.hero_img.nativeElement.getBoundingClientRect().bottom);
-    });
-  }
-
+  ngOnInit() {}
 }

@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Inject, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { NavService } from '../nav.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-nav',
@@ -9,19 +10,23 @@ import { DOCUMENT } from '@angular/common';
 export class NavComponent implements OnInit {
   // @ts-ignore
   @ViewChild('nav') nav: ElementRef;
-  @Output() navYPos = new EventEmitter<number>();
-  @Input() scrollEmitter: EventEmitter<void>;
-  @Input() sticky: boolean;
+  @Input() isHeroNav: boolean;
+  visible: boolean;
+  stickyStatus: Observable<boolean>;
 
-  @Input() hide: boolean;
-  @Input() dark: boolean;
-
-  constructor() {
+  constructor(private navService: NavService) {
   }
 
   ngOnInit() {
-    this.scrollEmitter.subscribe(n => {
-      this.navYPos.emit(this.nav.nativeElement.getBoundingClientRect().top);
-    });
+    if (this.isHeroNav) {
+      this.navService.heroNav = this.nav;
+      this.navService.getStickyObservable().subscribe(status => {
+        this.visible = !status;
+      });
+    } else {
+      this.navService.getStickyObservable().subscribe(status => {
+        this.visible = status;
+      });
+    }
   }
 }

@@ -1,4 +1,6 @@
-import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NavService } from './nav.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,21 +8,13 @@ import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, ViewC
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  scrollEmitter = new EventEmitter<void>();
-  sticky = false;
 
-  ngOnInit(): void {
+  constructor(private navService: NavService) {
   }
 
-  handleStick(e): void {
-    if (!this.sticky && e < 0) {
-      this.sticky = true;
-    }
-  }
+  ngOnInit() {}
 
-  handleUnstick(e): void {
-    if (this.sticky && e >= 0) {
-      this.sticky = false;
-    }
+  onScroll($event: Event): void {
+    this.navService.scrollSubject.next();
   }
 }

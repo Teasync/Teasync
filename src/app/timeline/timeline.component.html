@@ -9,19 +9,24 @@
   </div>
 
   <div class="row" style="height:50px"></div>
-
-  <div class="row" style="height:500vh;">
-    <div class="col">
-      <div class="card">
-        <div class="card-header">
-          Scotiabank FactoryU
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Innovation Engineering</h5>
-          <p class="card-text">Job description goes here, bippity boppity boop. Eat da booboo.</p>
+  <ng-container *ngFor="let job of jobList">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            {{job.company}}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{job.title}}</h5>
+            <ul class="card-text">
+              <li *ngFor="let point of job.points">{{point}}</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    <div class="row" style="height:25px"></div>
+  </ng-container>
+
 
 </div>

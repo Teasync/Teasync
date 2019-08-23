@@ -1,5 +1,6 @@
 import { ElementRef, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { auditTime, throttleTime } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ export class NavService {
 
     this.scrollSubject.subscribe(() => {
       const top = this.heroNav.nativeElement.getBoundingClientRect().top;
+      console.log(top);
       if (top > 0 && this.sticky) {
         console.log('unstuck');
         this.stickySubject.next(false);

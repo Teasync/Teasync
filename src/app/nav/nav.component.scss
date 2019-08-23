@@ -1,6 +1,6 @@
 @import "~src/styles/global/parallax";
 
-$tr-time: 0.15s;
+$tr-time: 0.1s;
 
 @mixin transition($str) {
   -webkit-transition: $str;

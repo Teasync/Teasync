@@ -10,12 +10,11 @@
   right: 0;
   bottom: 0;
   left: 0;
-  transform: translateZ(-3px) scale(2.6);
+  transform: translateZ(-15px) scale(9);
   background-size: 100%;
   z-index: -1;
 }
 
-.static:first-of-type {
-  //backdrop-filter: blur(2px);
-  background: linear-gradient(rgba(255, 255, 255, 0.8) 0%, rgb(255, 255, 255)50%);
+.static {
+  background: white;
 }

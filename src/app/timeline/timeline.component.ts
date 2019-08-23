@@ -7,6 +7,10 @@ import { Component, Inject, OnInit } from '@angular/core';
 })
 export class TimelineComponent implements OnInit {
 
+  cardList = {
+    title: 'Scotiabank FactoryU'
+  }
+
   constructor() {
   }
 

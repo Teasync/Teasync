@@ -15,6 +15,7 @@
   z-index: -1;
 }
 
-.static {
-  background: white;
+.static:first-of-type {
+  //backdrop-filter: blur(2px);
+  background: linear-gradient(rgba(255, 255, 255, 0.8) 0%, rgb(255, 255, 255)50%);
 }

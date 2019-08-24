@@ -1,24 +1,5 @@
-.timeline-title {
-  text-align: center;
-  font-weight: 300;
-  font-size: 400%;
-  color: #006da8;
-}
-
-.slide-fade-in {
-  transition: all ease-out 0.25s;
-  transform: translate(0, 80px) rotateX(0.05deg);
-  transform-style: preserve-3d;
-  transform-origin: top;
-  opacity: 0;
-}
-
-.slide-fade-in.show {
-  opacity: 1;
-  transform: none;
-}
-
 .card-header {
+  min-width: 350px;
   width: 45%;
   padding-right: 2em;
   z-index: 99;
@@ -29,7 +10,7 @@
 
 .card-body {
   transform: scale(0.98) translate(0, -40px);
-  border-color: #81a7b8 !important;
+  border-color: #d3e4eb !important;
   border-width: 0.5px !important;
   border-style: solid;
 }

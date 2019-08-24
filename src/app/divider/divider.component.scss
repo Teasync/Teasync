@@ -1,0 +1,16 @@
+@import "~src/styles/global/parallax";
+
+.divider::after {
+  background-image: url('../../assets/img/mountains.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+  height: 500px !important;
+  transform: translateY(-50px) translateZ(-0.4px) scale(1.21);
+}
+
+.divider {
+  height: 300px !important;
+  min-height: 300px;
+}

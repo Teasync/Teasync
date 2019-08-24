@@ -1,8 +1,8 @@
 <nav [ngClass]="{'show_' : visible, 'hide_' : !visible, 'nav-dark': !isHeroNav, 'nav-light': isHeroNav, 'sticky': !isHeroNav}"
      [ngStyle]="{'opacity': visible ? 1 : 0}"  #nav
      class="navbar-cust d-flex justify-content-center flex-row">
-  <a href="#" (click)="navWork($event)" class="nav-it h3" id="navWork"> Timeline </a>
-  <a href="#" class="nav-it h3" id="navProjects"> Projects </a>
+  <a href="#" (click)="navWork()" class="nav-it h3" id="navWork"> Timeline </a>
+  <a href="#" (click)="navProjects()" class="nav-it h3" id="navProjects"> Projects </a>
   <a href="#" class="nav-it h3" id="navSkills"> Skills </a>
   <a href="#" class="nav-it h3" id="navAbout"> About </a>
 </nav>

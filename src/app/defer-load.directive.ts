@@ -1,15 +1,19 @@
-import { AfterViewInit, Directive, ElementRef, EventEmitter, Output } from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 
 @Directive({
   selector: '[appDeferLoad]'
 })
-export class DeferLoadDirective implements AfterViewInit{
-  @Output() public deferLoad: EventEmitter<any> = new EventEmitter();
+export class DeferLoadDirective implements OnInit, AfterViewInit, OnDestroy {
+  @Output() public inView: EventEmitter<boolean> = new EventEmitter();
 
+  private visible: boolean;
   private intersectionObserver?: IntersectionObserver;
 
   constructor(private element: ElementRef) {
-    console.log(element)
+  }
+
+  ngOnInit(): void {
+    this.visible = false;
   }
 
   ngAfterViewInit(): void {
@@ -19,12 +23,22 @@ export class DeferLoadDirective implements AfterViewInit{
     this.intersectionObserver.observe((this.element.nativeElement) as Element);
   }
 
-  private checkForIntersection = (entries: Array<IntersectionObserverEntry>) => {
+  ngOnDestroy(): void {
+    this.intersectionObserver.unobserve(this.element.nativeElement);
+    this.intersectionObserver.disconnect();
+  }
+
+  private checkForIntersection(entries: Array<IntersectionObserverEntry>) {
     entries.forEach((entry: IntersectionObserverEntry) => {
-      if (this.checkIfIntersecting(entry)) {
-        this.deferLoad.emit();
-        this.intersectionObserver.unobserve(this.element.nativeElement);
-        this.intersectionObserver.disconnect();
+
+      if (!this.visible && this.checkIfIntersecting(entry)) {
+        this.inView.emit(true);
+        this.visible = true;
+      }
+
+      if (this.visible && !this.checkIfIntersecting(entry)) {
+        this.inView.emit(false);
+        this.visible = false;
       }
     });
   }

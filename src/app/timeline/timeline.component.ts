@@ -14,7 +14,7 @@ export class TimelineComponent implements OnInit, AfterViewInit {
       company: 'Scotiabank FactoryU',
       title: 'Innovation Engineer',
       kind: 'Full-Stack',
-      date: 'May - August 2019',
+      date: 'May - Aug 2019',
       platforms: ['Go', 'Django', 'Angular', 'Postgres', 'Keras'],
       points: [
         'Developed backend endpoints in Django and corresponding frontend consumer services and components in Angular for presenting and' +
@@ -28,7 +28,7 @@ export class TimelineComponent implements OnInit, AfterViewInit {
       company: 'OpenText',
       title: 'Software Developer',
       kind: 'Automation',
-      date: 'September - December 2018',
+      date: 'Sep - Dec 2018',
       platforms: ['Python', 'Robot Framework', 'PowerShell', 'Batch', 'Selenium'],
       points: [
         'Designed and developed automated testing system with Robot Framework to automate regression testing for continuous integration.',
@@ -37,10 +37,10 @@ export class TimelineComponent implements OnInit, AfterViewInit {
       ]
     },
     {
-      company: 'Public Service Commission of Canada',
+      company: 'Public Service Commission',
       title: 'Junior Programmer Analyst',
       kind: 'Back-end',
-      date: 'January - April 2018',
+      date: 'Jan - Apr 2018',
       platforms: ['Spring Framework', 'Oracle DB', 'Java'],
       points: [
         'Implemented user-facing searching and indexing in a Spring web app and Oracle database.',

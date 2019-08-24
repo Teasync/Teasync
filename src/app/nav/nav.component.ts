@@ -30,7 +30,11 @@ export class NavComponent implements OnInit {
     }
   }
 
-  navWork($event: MouseEvent) {
+  navWork() {
     setTimeout(() => this.navService.workRef.nativeElement.scrollIntoView({behavior: 'smooth', block: 'start'}), 1);
+  }
+
+  navProjects() {
+    setTimeout(() => this.navService.projectsRef.nativeElement.scrollIntoView({behavior: 'smooth', block: 'start'}), 1);
   }
 }

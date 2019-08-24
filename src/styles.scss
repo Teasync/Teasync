@@ -1,7 +1,7 @@
 :root {
   --transition-time: .2s;
 }
-
+$anim_time: 0.5s;
 * {
   border-radius: 0 !important;
 }
@@ -24,3 +24,43 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.section-title {
+  text-align: center;
+  font-weight: 300;
+  font-size: 400%;
+  color: #006da8;
+}
+
+.slide-fade-in {
+  transition: all ease-out $anim_time;
+  transform: translate(0, 40px) rotateX(0.02deg);
+  transform-style: preserve-3d;
+  transform-origin: top;
+  opacity: 0;
+}
+
+.slide-fade-in.show {
+  opacity: 1;
+  transform: none;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity ease-out $anim_time;
+}
+
+.fade-in.show {
+  opacity: 1;
+}
+
+.fade-in-anim {
+  animation: fadein 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+

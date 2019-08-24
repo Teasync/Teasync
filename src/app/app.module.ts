@@ -7,6 +7,8 @@ import { NavComponent } from './nav/nav.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeferLoadDirective } from './defer-load.directive';
+import { ProjectsComponent } from './projects/projects.component';
+import { DividerComponent } from './divider/divider.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { DeferLoadDirective } from './defer-load.directive';
     NavComponent,
     TimelineComponent,
     DeferLoadDirective,
+    ProjectsComponent,
+    DividerComponent,
   ],
   imports: [
     BrowserAnimationsModule,

@@ -1,14 +1,7 @@
 @import "~src/styles/global/parallax";
 
-$tr-time: 0.1s;
+$tr-time: 0.2s;
 
-@mixin transition($str) {
-  -webkit-transition: $str;
-  -moz-transition: $str;
-  -ms-transition: $str;
-  -o-transition: $str;
-  transition: $str;
-}
 
 * {
   box-sizing: border-box;
@@ -27,14 +20,14 @@ $tr-time: 0.1s;
   font-size: 1.7em;
   font-weight: 300 !important;
   pointer-events: auto;
-  padding: 25px 1.2vw;
+  padding: 25px 1.3vw;
   margin: auto 0 auto 0;
   text-decoration: none;
 }
 
 .nav-light {
   background-color: rgba(255, 255, 255, 0.51) !important;
-  @include transition(opacity #{$tr-time});
+  transition: opacity #{$tr-time};
 
   .nav-it {
     color: #005288 !important;
@@ -50,7 +43,7 @@ $tr-time: 0.1s;
 
 .nav-dark {
   background-color: rgba(0, 59, 98, 0.6) !important;
-  @include transition(opacity #{$tr-time});
+  transition: opacity #{$tr-time};
 
   .nav-it {
     color: white !important;

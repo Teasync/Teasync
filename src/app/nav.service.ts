@@ -1,6 +1,5 @@
 import { ElementRef, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { auditTime, throttleTime } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +13,7 @@ export class NavService {
   workRef: ElementRef;
   projectsRef: ElementRef;
   skillsRef: ElementRef;
-  aboutRef: ElementRef
+  aboutRef: ElementRef;
 
   scrollSubject: Subject<never> = new Subject();
 
@@ -34,6 +33,7 @@ export class NavService {
       }
     });
   }
+
   getStickyObservable(): Observable<boolean> {
     return this.stickySubject.asObservable();
   }

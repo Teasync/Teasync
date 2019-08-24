@@ -1,32 +1,33 @@
-<div class="container">
+<div #timeline class="container" style="padding-top:50px">
 
-  <div class="row" style="height: 100px"></div>
+    <div class="row" style="height: 100px"></div>
 
-  <div class="row">
-    <div class="col">
-      <div class="timeline-title text-center">Timeline</div>
-    </div>
-  </div>
-
-  <div class="row" style="height:50px"></div>
-  <ng-container *ngFor="let job of jobList">
-    <div class="row">
-      <div class="col">
-        <div class="card">
-          <div class="card-header">
-            {{job.company}}
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">{{job.title}}</h5>
-            <ul class="card-text">
-              <li *ngFor="let point of job.points">{{point}}</li>
-            </ul>
-          </div>
+    <div class="row slide-fade-in" appDeferLoad (deferLoad)="vis=true" [ngClass]="{show: vis}">
+        <div class="col">
+            <div class="timeline-title text-center">Timeline</div>
         </div>
-      </div>
     </div>
-    <div class="row" style="height:25px"></div>
-  </ng-container>
 
-
+    <div class="row" style="height:50px"></div>
+    <ng-container *ngFor="let job of jobList; index as i;">
+        <div class="row slide-fade-in" appDeferLoad (deferLoad)="jobVis[i]=true" [ngClass]="{show: jobVis[i]}">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title"><span
+                                class="font-weight-bold">{{job.title}}</span><span
+                                class="font-weight-normal"> - {{job.kind}}</span><br>
+                        </h5>
+                        <h6 class="card-subtitle">{{job.company}} | {{job.date}}</h6>
+                    </div>
+                    <div class="card-body px-1 pb-3 pt-5">
+                        <ul class="card-text">
+                            <li class="m-1" *ngFor="let point of job.points">{{point}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="height:50px"></div>
+    </ng-container>
 </div>

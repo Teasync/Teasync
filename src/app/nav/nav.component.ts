@@ -29,4 +29,8 @@ export class NavComponent implements OnInit {
       });
     }
   }
+
+  navWork($event: MouseEvent) {
+    setTimeout(() => this.navService.workRef.nativeElement.scrollIntoView({behavior: 'smooth', block: 'start'}), 1);
+  }
 }

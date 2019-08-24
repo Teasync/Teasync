@@ -11,6 +11,11 @@ export class NavService {
   sticky: boolean;
   heroNav: ElementRef;
 
+  workRef: ElementRef;
+  projectsRef: ElementRef;
+  skillsRef: ElementRef;
+  aboutRef: ElementRef
+
   scrollSubject: Subject<never> = new Subject();
 
   constructor() {
@@ -18,13 +23,12 @@ export class NavService {
 
     this.scrollSubject.subscribe(() => {
       const top = this.heroNav.nativeElement.getBoundingClientRect().top;
-      console.log(top);
       if (top > 0 && this.sticky) {
-        console.log('unstuck');
+        // console.log('unstuck');
         this.stickySubject.next(false);
         this.sticky = false;
       } else if (top <= 0 && !this.sticky) {
-        console.log('stuck');
+        // console.log('stuck');
         this.stickySubject.next(true);
         this.sticky = true;
       }

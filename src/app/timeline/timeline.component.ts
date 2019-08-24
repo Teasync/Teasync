@@ -1,11 +1,13 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import { NavService } from '../nav.service';
 
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.scss']
 })
-export class TimelineComponent implements OnInit {
+export class TimelineComponent implements OnInit, AfterViewInit {
+  @ViewChild('timeline', {static: false}) workRef: ElementRef;
 
   jobList = [
     {
@@ -47,11 +49,19 @@ export class TimelineComponent implements OnInit {
       ]
     }
   ];
+  vis: boolean;
+  jobVis: boolean[];
 
-  constructor() {
+  constructor(private navService: NavService) {
+    this.jobVis = new Array(this.jobList.length).fill(false);
   }
 
   ngOnInit() {
+    this.vis = false;
+  }
+
+  ngAfterViewInit(): void {
+    this.navService.workRef = this.workRef;
   }
 
 }

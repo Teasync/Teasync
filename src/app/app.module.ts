@@ -6,6 +6,7 @@ import { HeroComponent } from './hero/hero.component';
 import { NavComponent } from './nav/nav.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DeferLoadDirective } from './defer-load.directive';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeroComponent,
     NavComponent,
     TimelineComponent,
+    DeferLoadDirective,
   ],
   imports: [
     BrowserAnimationsModule,

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavService } from './nav.service';
-import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +11,8 @@ export class AppComponent implements OnInit {
   constructor(private navService: NavService) {
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   onScroll($event: Event): void {
     this.navService.scrollSubject.next();

@@ -9,25 +9,30 @@ import { NavService } from '../nav.service';
 export class SkillsComponent implements OnInit, AfterViewInit {
   @ViewChild('skills', {static: false}) skillsRef
   vis: boolean;
-  skillList: any[] = [
-    {name: '', img: ''},
-    {name: '', img: ''},
-    {name: '', img: ''},
-    {name: '', img: ''},
-    {name: '', img: ''},
-    {name: '', img: ''},
-    {name: '', img: ''},
-    {name: '', img: ''},
-    {name: '', img: ''},
-    {name: '', img: ''},
-    {name: '', img: ''},
-    {name: '', img: ''},
-    {name: '', img: ''},
-    {name: '', img: ''},
-    {name: '', img: ''},
-    {name: '', img: ''},
+  skillList: any = {
+    frameworks: [
+      {name: 'Golang', img: '../../assets/golang.png'},
+      {name: 'Python', img: '../../assets/python.png'},
+      {name: 'Java', img: '../../assets/java.png'},
+      {name: 'C++', img: '../../assets/cpp.png'},
+      {name: 'TypeScript', img: '../../assets/typescript.png'}
 
-  ];
+    ],
+    languages: [
+      {name: '', img: ''},
+      {name: '', img: ''},
+      {name: '', img: ''},
+      {name: '', img: ''},
+      {name: '', img: ''}
+    ],
+    technologies: [
+      {name: '', img: ''},
+      {name: '', img: ''},
+      {name: '', img: ''},
+      {name: '', img: ''},
+      {name: '', img: ''}
+    ]
+  };
 
   constructor(private navService: NavService) {
   }

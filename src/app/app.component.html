@@ -5,11 +5,12 @@
     <app-timeline></app-timeline>
   </section>
 
-  <app-divider></app-divider>
+  <app-divider [dividerType]="'abstract'"></app-divider>
 
-  <section class="section static">
+  <section class="section static" style="height:fit-content">
     <app-projects></app-projects>
   </section>
+  <section class="section static" style="height:200vh"></section>
 </div>
 <app-nav [isHeroNav]="false"></app-nav>
 

@@ -1,6 +1,6 @@
 @import "~src/styles/global/parallax";
 
-.divider::after {
+.dividerAbstract::after {
   background-image: url('../../assets/img/mountains.jpg');
   background-position: center;
   background-size: cover;
@@ -10,7 +10,8 @@
   transform: translateY(-50px) translateZ(-0.4px) scale(1.21);
 }
 
-.divider {
+.dividerAbstract {
   height: 300px !important;
   min-height: 300px;
+  background-color: white;
 }

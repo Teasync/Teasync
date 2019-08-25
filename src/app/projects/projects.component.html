@@ -5,4 +5,56 @@
       <div class="section-title text-center">Projects</div>
     </div>
   </div>
+  <div class="row" style="height:50px"></div>
+  <div *ngFor="let project of projectList; let i = index">
+    <div *ngIf="i % 3 == 0" class="row">
+      <div *ngIf="i < projectList.length" class="col">
+        <div class="card slide-fade-in" appDeferLoad (inView)="projectListVis[i]=$event"
+             [ngClass]="{show: projectListVis[i]}">
+          <div class="card-header">
+            <h6 class="card-title"><span
+              class="font-weight-normal">{{projectList[i].name}}</span>
+            </h6>
+            <h6 class="card-subtitle">{{projectList[i].platforms}}</h6>
+          </div>
+          <img *ngIf="projectList[i].img" [alt]="projectList[i].name" class="card-img mb-2" [src]="projectList[i].img">
+          <div class="card-body  card-text">
+            {{projectList[i].description}}
+          </div>
+        </div>
+      </div>
+      <div *ngIf="i + 1 < projectList.length" class="col">
+        <div class="card slide-fade-in" appDeferLoad (inView)="projectListVis[i + 1]=$event"
+             [ngClass]="{show: projectListVis[i + 1]}">
+          <div class="card-header">
+            <h6 class="card-title"><span
+              class="font-weight-normal">{{projectList[i + 1].name}}</span>
+            </h6>
+            <h6 class="card-subtitle">{{projectList[i + 1].platforms}}</h6>
+          </div>
+          <img *ngIf="projectList[i + 1].img" [alt]="projectList[i + 1].name" class="card-img mb-2"
+               [src]="projectList[i + 1].img">
+          <div class="card-body  card-text">
+            {{projectList[i + 1].description}}
+          </div>
+        </div>
+      </div>
+      <div *ngIf="i + 2 < projectList.length" class="col">
+        <div class="card slide-fade-in" appDeferLoad (inView)="projectListVis[i + 2]=$event"
+             [ngClass]="{show: projectListVis[i + 2]}">
+          <div class="card-header">
+            <h6 class="card-title"><span
+              class="font-weight-normal">{{projectList[i + 2].name}}</span>
+            </h6>
+            <h6 class="card-subtitle">{{projectList[i + 2].platforms}}</h6>
+          </div>
+          <img *ngIf="projectList[i + 2].img" [alt]="projectList[i + 2].name" class="card-img mb-2"
+               [src]="projectList[i + 2].img">
+          <div class="card-body  card-text">
+            {{projectList[i + 2].description}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

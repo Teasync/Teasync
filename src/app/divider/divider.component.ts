@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DividerComponent implements OnInit {
   visible: boolean;
 
-  @Input() imgUrl: string;
+  @Input() dividerType: string;
 
   constructor() { }
 

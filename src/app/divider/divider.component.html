@@ -1,5 +1,4 @@
 <div appDeferLoad (inView)="visible=$event">
-  <section  class="section parallax divider"></section>
-
+  <section class="section parallax" [ngClass]="{'dividerAbstract': dividerType == 'abstract'}"></section>
 </div>
 

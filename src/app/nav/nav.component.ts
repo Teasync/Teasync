@@ -39,6 +39,7 @@ export class NavComponent implements OnInit {
   }
 
   navSkills($event: Event) {
+    setTimeout(() => this.navService.skillsRef.nativeElement.scrollIntoView({behavior: 'smooth', block: 'start'}), 1)
   }
 
   navAbout($event: Event) {

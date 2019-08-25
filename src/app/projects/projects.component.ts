@@ -11,11 +11,12 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   vis: boolean;
   projectListVis: boolean[];
-  projectList: any = [
+  projectList: any[] = [
     {
       name: 'teasync.github.io',
       platforms: 'Angular',
-      description: 'This web-app! Custom services and directives for render-on-view of elements scrolled into view.',
+      description: 'This web-app! Built completely from-scratch, with components and directives custom built to work ' +
+        'in a perspective wrapper.',
       img: null
     },
     {

@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeferLoadDirective } from './defer-load.directive';
 import { ProjectsComponent } from './projects/projects.component';
 import { DividerComponent } from './divider/divider.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DividerComponent } from './divider/divider.component';
     DeferLoadDirective,
     ProjectsComponent,
     DividerComponent,
+    SkillsComponent,
   ],
   imports: [
     BrowserAnimationsModule,

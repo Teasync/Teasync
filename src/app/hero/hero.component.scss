@@ -1,7 +1,7 @@
 @import "~src/styles/global/parallax";
 
 .hero-img::after {
-  background-image: linear-gradient(rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0.1) 50%), url('../../assets/img/hero.jpg');
+  background-image: linear-gradient(rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.1) 50%), url('../../assets/img/hero.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,7 +16,7 @@
 .hero-title {
   text-align: center;
   font-weight: 300;
-  font-size: 500%;
+  font-size: 600%;
   color: #006da8;
 }
 
@@ -28,12 +28,13 @@
   display: inline-block !important;
   text-align: center;
   color: white;
-  background-color: rgba(118, 147, 170, 0.25);
+  background-color: rgba(135, 154, 168, 0.17);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
   line-height: 180%;
   font-weight: 400;
   border-radius: 2px !important;
+  font-size: 1.25rem;
 }
 
 
@@ -51,16 +52,16 @@
 
 .fa {
   font-size: 200%;
-  color: #006DA8;
+  color: white;
   transform: none;
   transition-property: transform, color;
-  transition-duration: 0.1s;
+  transition-duration: 0.08s;
   transition-timing-function: ease-out;
 }
 
 .fa:hover {
-  transform: scale(1.2);
-  color: white;
+  transform: scale(1.15);
+  color: #006DA8;
 }
 
 .fa:active {

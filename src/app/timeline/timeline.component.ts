@@ -9,11 +9,11 @@ import { NavService } from '../nav.service';
 export class TimelineComponent implements OnInit, AfterViewInit {
   @ViewChild('timeline', {static: false}) workRef: ElementRef;
 
-  jobList = [
+  jobList: any[] = [
     {
       company: 'Scotiabank FactoryU',
       title: 'Innovation Engineer',
-      kind: 'Full-Stack',
+      kind: 'Full-stack',
       date: 'May - Aug 2019',
       platforms: ['Go', 'Django', 'Angular', 'Postgres', 'Keras'],
       points: [

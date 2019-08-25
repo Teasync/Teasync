@@ -1,0 +1,9 @@
+<div #skills class="container" style="padding-top:50px">
+  <div class="row" style="height: 100px"></div>
+
+  <div class="row slide-fade-in" appDeferLoad (inView)="vis=$event" [ngClass]="{show: vis}">
+    <div class="col">
+      <div class="section-title text-center">Skills</div>
+    </div>
+  </div>
+</div>

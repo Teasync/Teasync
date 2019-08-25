@@ -9,8 +9,8 @@ import { NavService } from '../nav.service';
 export class ProjectsComponent implements OnInit, AfterViewInit {
   @ViewChild('projects', {static: false}) projectsRef: ElementRef;
 
-  private vis: boolean;
-  private projectListVis: boolean[];
+  vis: boolean;
+  projectListVis: boolean[];
   projectList: any = [
     {
       name: 'teasync.github.io',

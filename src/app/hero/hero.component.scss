@@ -47,7 +47,25 @@
   pointer-events: none;
 
   transform: translateZ(-7px) scale(4.5);
+}
 
+.fa {
+  font-size: 200%;
+  color: #006DA8;
+  transform: none;
+  transition-property: transform, color;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-out;
+}
+
+.fa:hover {
+  transform: scale(1.2);
+  color: white;
+}
+
+.fa:active {
+  transform: scale(1.1);
+  color: #e7e7e7;
 }
 
 .cloud::before, .cloud::after {

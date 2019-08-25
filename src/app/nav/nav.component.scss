@@ -11,6 +11,7 @@ $tr-time: 0.2s;
   overflow: hidden;
   width: 100vw;
   height: 80px;
+  z-index: 1;
 
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -23,6 +24,7 @@ $tr-time: 0.2s;
   padding: 25px 1.3vw;
   margin: auto 0 auto 0;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .nav-light {

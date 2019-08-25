@@ -1,4 +1,9 @@
 <div appDeferLoad (inView)="visible=$event">
-  <section class="section parallax" [ngClass]="{'dividerAbstract': dividerType == 'abstract'}"></section>
+  <section class="section parallax divider"
+           [ngClass]="{
+                'dividerAbstract': dividerType == 'abstract',
+                'dividerLake': dividerType == 'lake',
+                'dividerWoods': dividerType == 'woods'
+           }"></section>
 </div>
 

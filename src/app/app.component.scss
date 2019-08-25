@@ -6,7 +6,8 @@ body,html{margin:0;padding:0;}
 .wrapper {
   height: 100vh;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   perspective: 2px;
 }
 

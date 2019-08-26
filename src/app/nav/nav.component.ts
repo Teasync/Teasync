@@ -8,40 +8,30 @@ import { Observable } from 'rxjs';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  // @ts-ignore
-  @ViewChild('nav') nav: ElementRef;
+
+  @ViewChild('nav', {static: false}) nav: ElementRef;
   @Input() isHeroNav: boolean;
-  visible: boolean;
-  stickyStatus: Observable<boolean>;
+  @Input() isVisible: boolean;
 
   constructor(private navService: NavService) {
   }
 
   ngOnInit() {
-    if (this.isHeroNav) {
-      this.navService.heroNav = this.nav;
-      this.navService.getStickyObservable().subscribe(status => {
-        this.visible = !status;
-      });
-    } else {
-      this.navService.getStickyObservable().subscribe(status => {
-        this.visible = status;
-      });
-    }
+    this.isVisible = this.isHeroNav;
   }
 
-  navWork($event: Event) {
+  navWork($event: Event): void {
     setTimeout(() => this.navService.workRef.nativeElement.scrollIntoView({behavior: 'smooth', block: 'start'}), 1);
   }
 
-  navProjects($event: Event) {
+  navProjects($event: Event): void {
     setTimeout(() => this.navService.projectsRef.nativeElement.scrollIntoView({behavior: 'smooth', block: 'start'}), 1);
   }
 
-  navSkills($event: Event) {
+  navSkills($event: Event): void {
     setTimeout(() => this.navService.skillsRef.nativeElement.scrollIntoView({behavior: 'smooth', block: 'start'}), 1)
   }
 
-  navAbout($event: Event) {
+  navAbout($event: Event): void {
   }
 }

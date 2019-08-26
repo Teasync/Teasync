@@ -7,14 +7,12 @@ import { NavService } from './nav.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  navVis: boolean;
 
   constructor(private navService: NavService) {
   }
 
   ngOnInit() {
-  }
-
-  onScroll($event: Event): void {
-    this.navService.scrollSubject.next();
+    this.navService.stickySubject.asObservable().subscribe((val: boolean) => this.navVis = !val);
   }
 }

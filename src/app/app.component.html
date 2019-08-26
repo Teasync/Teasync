@@ -1,4 +1,4 @@
-<div class="wrapper" (scroll)="onScroll($event)">
+<div class="wrapper">
   <app-hero></app-hero>
 <!--  <section class="section static" style="min-height: 3000px;">-->
   <section class="section static" style="height:fit-content">
@@ -19,6 +19,6 @@
 
   <section class="section static" style="height:200vh"></section>
 </div>
-<app-nav [isHeroNav]="false"></app-nav>
+<app-nav [isVisible]="navVis" [isHeroNav]="false"></app-nav>
 
 

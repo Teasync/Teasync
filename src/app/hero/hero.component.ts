@@ -7,11 +7,18 @@ import { NavService } from '../nav.service';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent implements OnInit {
-  // @ts-ignore
-  // tslint:disable-next-line:variable-name
-  @ViewChild('hero_img') hero_img: ElementRef;
+  navVis: boolean;
 
-  constructor(private navService: NavService) { }
+  constructor(private navService: NavService) {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.navVis = true;
+  }
+
+  inView($event: boolean): void {
+    console.log($event);
+    this.navService.stickySubject.next($event);
+    this.navVis = $event;
+  }
 }

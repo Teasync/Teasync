@@ -51,5 +51,5 @@
                          class="fa fa-github-square text-center px-2"></a></div>
     </div>
   </div>
-  <app-nav class="fade-in-anim" [isHeroNav]="true"></app-nav>
+  <app-nav appDeferLoad (inView)="inView($event)" [options]="{threshold: 0.99}" [isVisible]="navVis" [childEl]="true" class="fade-in-anim" [isHeroNav]="true"></app-nav>
 </section>

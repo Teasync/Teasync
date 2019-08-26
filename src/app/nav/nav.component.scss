@@ -2,6 +2,11 @@
 
 $tr-time: 0.2s;
 
+:host {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+}
 
 * {
   box-sizing: border-box;
@@ -33,6 +38,7 @@ $tr-time: 0.2s;
 
   .nav-it {
     color: #005288 !important;
+
     &:hover {
       background-color: rgba(0, 82, 136, 0.76) !important;
       color: white !important;
@@ -49,6 +55,7 @@ $tr-time: 0.2s;
 
   .nav-it {
     color: white !important;
+
     &:hover {
       background-color: rgba(255, 255, 255, 0.75) !important;
       color: #005288 !important;

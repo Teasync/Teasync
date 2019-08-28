@@ -34,12 +34,14 @@ export class DeferLoadDirective implements OnInit, AfterViewInit, OnDestroy {
       if (!this.visible && this.checkIfIntersecting(entry)) {
         this.inView.emit(true);
         this.visible = true;
+        this.intersectionObserver.unobserve(this.element.nativeElement);
+        this.intersectionObserver.disconnect();
       }
 
-      if (this.visible && !this.checkIfIntersecting(entry)) {
-        this.inView.emit(false);
-        this.visible = false;
-      }
+      // if (this.visible && !this.checkIfIntersecting(entry)) {
+      //   this.inView.emit(false);
+      //   this.visible = false;
+      // }
     });
   }
 

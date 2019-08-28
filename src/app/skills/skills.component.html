@@ -6,4 +6,114 @@
       <div class="section-title text-center">Skills</div>
     </div>
   </div>
+
+  <ng-template #skillCard let-skill="skill">
+    <div class="container-fluid">
+      <div class="row"><img class="margin-auto" [src]="getFullImg(skill.img)" style="height:50px" [alt]="skill.img"></div>
+      <div class="row"><div class="margin-auto pt-2 text-center">{{skill.name}} </div></div>
+    </div>
+  </ng-template>
+
+  <div class="row" style="height:50px"></div>
+  <div class="row">
+    <div class="card slide fade-in" appDeferLoad (inView)="langVis=$event" [ngClass]="{show: langVis}">
+      <div class="card-header">
+        <h6 class="card-title mb-0 font-size-20 font-weight-normal">Languages</h6>
+      </div>
+
+      <div class="card-body card-text">
+        <div class="container-fluid" *ngFor="let lang of skillList.languages; let i = index">
+          <div *ngIf="i % 6 == 0" class="row my-4">
+            <div *ngIf="i < skillList.languages.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: lang}"></ng-container>
+            </div>
+            <div *ngIf="i + 1 < skillList.languages.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.languages[i+1]}"></ng-container>
+            </div>
+            <div *ngIf="i + 2 < skillList.languages.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.languages[i+2]}"></ng-container>
+            </div>
+            <div *ngIf="i + 3 < skillList.languages.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.languages[i+3]}"></ng-container>
+            </div>
+            <div *ngIf="i + 4 < skillList.languages.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.languages[i+4]}"></ng-container>
+            </div>
+            <div *ngIf="i + 5 < skillList.languages.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.languages[i+5]}"></ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="height:50px"></div>
+  <div class="row">
+    <div class="card slide fade-in" appDeferLoad (inView)="frVis=$event" [ngClass]="{show: frVis}">
+      <div class="card-header">
+        <h6 class="card-title mb-0 font-size-20 font-weight-normal">Frameworks</h6>
+      </div>
+      <div class="card-body card-text">
+        <div class="container-fluid" *ngFor="let lang of skillList.frameworks; let i = index">
+          <div *ngIf="i % 8 == 0" class="row my-4">
+            <div *ngIf="i < skillList.frameworks.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: lang}"></ng-container>
+            </div>
+            <div *ngIf="i + 1 < skillList.frameworks.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.frameworks[i+1]}"></ng-container>
+            </div>
+            <div *ngIf="i + 2 < skillList.frameworks.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.frameworks[i+2]}"></ng-container>
+            </div>
+            <div *ngIf="i + 3 < skillList.frameworks.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.frameworks[i+3]}"></ng-container>
+            </div>
+            <div *ngIf="i + 4 < skillList.frameworks.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.frameworks[i+4]}"></ng-container>
+            </div>
+            <div *ngIf="i + 5 < skillList.frameworks.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.frameworks[i+5]}"></ng-container>
+            </div>
+            <div *ngIf="i + 6 < skillList.frameworks.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.frameworks[i+6]}"></ng-container>
+            </div>
+            <div *ngIf="i + 7 < skillList.frameworks.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.frameworks[i+7]}"></ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="height:50px"></div>
+  <div class="row">
+    <div class="card slide fade-in" appDeferLoad (inView)="techVis=$event" [ngClass]="{show: techVis}">
+      <div class="card-header">
+        <h6 class="card-title mb-0 font-size-20 font-weight-normal">Technologies</h6>
+      </div>
+      <div class="card-body card-text">
+        <div class="container-fluid" *ngFor="let lang of skillList.technologies; let i = index">
+          <div *ngIf="i % 5 == 0" class="row my-4">
+            <div *ngIf="i < skillList.technologies.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: lang}"></ng-container>
+            </div>
+            <div *ngIf="i + 1 < skillList.technologies.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.technologies[i+1]}"></ng-container>
+            </div>
+            <div *ngIf="i + 2 < skillList.technologies.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.technologies[i+2]}"></ng-container>
+            </div>
+            <div *ngIf="i + 3 < skillList.technologies.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.technologies[i+3]}"></ng-container>
+            </div>
+            <div *ngIf="i + 4 < skillList.technologies.length" class="col">
+              <ng-container *ngTemplateOutlet="skillCard; context: {skill: skillList.technologies[i+4]}"></ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="height:120px"></div>
+
 </div>

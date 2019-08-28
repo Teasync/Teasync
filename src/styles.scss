@@ -20,6 +20,24 @@ body {
   margin: 0;
 }
 
+.mx-10 {
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.font-size-20 {
+  font-size: 20px !important;
+}
+
+.font-size-16 {
+  font-size: 16px !important;
+}
+
+.margin-auto {
+  margin: auto !important;
+}
+
+
 .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
   margin: 0;
   padding: 0;
@@ -34,7 +52,7 @@ body {
 
 .slide-fade-in {
   transition: all ease-out $anim_time;
-  transform: translate(0, 40px) rotateX(0.02deg);
+  transform: translate(0, 80px) rotateX(0.02deg);
   transform-style: preserve-3d;
   transform-origin: top;
   opacity: 0;

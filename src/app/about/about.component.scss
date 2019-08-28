@@ -1,5 +1,5 @@
 .card-header {
-  min-width: 250px;
+  min-width: 150px;
   width: 45%;
   padding-right: 2em;
   z-index: 99;
@@ -19,6 +19,10 @@
 .card {
   border: none;
   width: 100%;
+}
+
+.card-text {
+  line-height: 1.7rem;
 }
 
 .container {

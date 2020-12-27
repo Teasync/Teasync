@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
-import { NavService } from '../nav.service';
+import {AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
+import {NavService} from '../nav.service';
 
 @Component({
   selector: 'app-timeline',
@@ -10,6 +10,21 @@ export class TimelineComponent implements OnInit, AfterViewInit {
   @ViewChild('timeline', {static: false}) workRef: ElementRef;
 
   jobList: any[] = [
+    {
+      company: 'IBM iX',
+      title: 'Application Developer',
+      kind: 'Full-stack',
+      date: 'Jan - May, Sep - Dec 2020',
+      platforms: ['Go', 'Django', 'Angular', 'Postgres', 'Keras'],
+      points: [
+        'Architected and developed front-end application for a responsive KPI metric dashboard with Jira and Sonarqube integration in ' +
+        'Angular with Redux and custom theming.',
+        'Created build pipelines, dev-ops toolchains, bash scripts, and Dockerfiles for application testing, debugging, and deployment ' +
+        'onto Kubernetes.',
+        'Researched and implemented SSO authentication using OpenID Connect and Express to secure sensitive information and assets' +
+        ' within a Kubernetes cluster.',
+      ]
+    },
     {
       company: 'Scotiabank FactoryU',
       title: 'Innovation Engineer',

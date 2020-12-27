@@ -22,6 +22,12 @@
 
 .hero-info-box-wrapper {
   text-align: center;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+
+  max-width: fit-content;
+  border-radius: 2px !important;
+  padding: 0;
 }
 
 .hero-info-box {
@@ -29,12 +35,11 @@
   text-align: center;
   color: white;
   background-color: rgba(135, 154, 168, 0.17);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
   line-height: 180%;
   font-weight: 400;
   border-radius: 2px !important;
   font-size: 1.25rem;
+  margin-bottom: 0;
 }
 
 

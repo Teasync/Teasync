@@ -15,8 +15,8 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     {
       name: 'teasync.github.io',
       platforms: 'Angular',
-      description: 'This web-app! Built completely from-scratch, with components and directives custom built to work ' +
-        'in a perspective wrapper.',
+      description: 'This web-app! Built completely from-scratch, with custom components and directives built to work ' +
+        'in a 3D perspective wrapper.',
       img: null
     },
     {
@@ -44,6 +44,12 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       platforms: 'Windows Batch',
       description: 'Snake game written in batch. Uses ANSI escape sequences to animate objects.',
       img: '../../assets/img/snake.png'
+    },
+    {
+      name: 'Slay the Spire Save Utility',
+      platforms: 'Qt - Python',
+      description: 'Save editor application for unpacking and editing save files in Slay the Spire.',
+      img: '../../assets/img/save_editor.png'
     }
   ];
 

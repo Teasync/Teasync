@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class NavComponent implements OnInit {
   // @ts-ignore
-  @ViewChild('nav') nav: ElementRef;
+  @ViewChild('nav', {static: true}) nav: ElementRef;
   @Input() isHeroNav: boolean;
   visible: boolean;
   stickyStatus: Observable<boolean>;
